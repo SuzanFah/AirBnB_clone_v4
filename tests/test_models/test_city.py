@@ -8,7 +8,7 @@ import inspect
 import models
 from models import city
 from models.base_model import BaseModel
-import pep8
+import pycodestyle
 import unittest
 City = city.City
 
@@ -21,7 +21,7 @@ class TestCityDocs(unittest.TestCase):
         cls.city_f = inspect.getmembers(City, inspect.isfunction)
 
     def test_pep8_conformance_city(self):
-        """Test that models/city.py conforms to PEP8."""
+        """Test that models/city.py conforims to PEP8."""
         pep8s = pep8.StyleGuide(quiet=True)
         result = pep8s.check_files(['models/city.py'])
         self.assertEqual(result.total_errors, 0,
